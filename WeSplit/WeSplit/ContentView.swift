@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var checkAmount = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Amount", text: $checkAmount).keyboardType(.decimalPad)
+                }
+            }.navigationTitle("WeSplit")
+        }
     }
 }
 
